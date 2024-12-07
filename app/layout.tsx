@@ -46,7 +46,7 @@ export default function RootLayout({
               <nav className="flex items-center space-x-6 text-sm font-medium">
                 <a
                   className="font-bold text-lg transition-colors hover:text-foreground text-secondary"
-                  href="/products"
+                  href="/products/keyboards"
                 >
                   Бүтээгдэхүүн
                 </a>
