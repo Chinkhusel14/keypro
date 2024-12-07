@@ -13,7 +13,6 @@
     "migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.4.1",
     "@neondatabase/serverless": "^0.9.5",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.2",

@@ -1,116 +1,64 @@
-import Link from 'next/link'
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Search } from 'lucide-react'
-import Image from 'next/image'
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <>
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gray-50 dark:bg-gray-900">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-4 text-center">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none font-inter text-gray-800 dark:text-gray-200">
-              Discover Your Perfect Keyboard
-            </h1>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Explore our curated collection of premium mechanical keyboards and accessories.
-            </p>
-            <div className="w-full max-w-sm space-y-2">
-              <div className="flex space-x-2">
-                <Input type="search" placeholder="Search keyboards..." className="bg-white dark:bg-gray-800" />
-                <Button type="submit" className="bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300">
-                  <Search className="mr-2 h-4 w-4" />
-                  Search
-                </Button>
-              </div>
+    <div className="container mx-auto py-8">
+      <h1 className="text-5xl font-bold text-foreground mb-8">
+        Санал болгох Keyboards
+      </h1>
+      <div className="flex flex-col md:flex-row gap-8">
+        <Card className="md:w-2/3">
+          <CardContent className="p-4">
+            <Image
+              src="/keyboard.jpg"
+              alt="Featured Keyboard"
+              width={800}
+              height={600}
+              className="w-full h-auto object-cover rounded-lg"
+            />
+          </CardContent>
+          <CardFooter className="flex justify-between items-center">
+            <div>
+              <p className="text-2xl font-bold text-foreground">300,000₮</p>
+              <p className="text-secondary">RJZZ</p>
             </div>
-          </div>
+            <Button className="bg-primary text-primary-foreground hover:bg-secondary">
+              Add to Cart
+            </Button>
+          </CardFooter>
+        </Card>
+        <div className="md:w-1/3 space-y-8">
+          <Card>
+            <CardContent className="p-4">
+              <Image
+                src="/switches.jpg"
+                alt="Keyboard Switches"
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <Image
+                src="/keycaps.jpg"
+                alt="Keycaps"
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" className="w-full">
+                View More
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-800">
-        <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-inter text-gray-800 dark:text-gray-200 mb-8">Featured Categories</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-gray-50 dark:bg-gray-900">
-              <CardHeader>
-                <CardTitle className="font-inter">Mechanical Keyboards</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Image
-                  alt="Mechanical Keyboard"
-                  className="w-full h-60 object-cover rounded-md"
-                  height="240"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/240",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300">
-                  <Link href="/keyboards">Explore Keyboards</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-            <Card className="bg-gray-50 dark:bg-gray-900">
-              <CardHeader>
-                <CardTitle className="font-inter">Keycaps</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Image
-                  alt="Keycaps"
-                  className="w-full h-60 object-cover rounded-md"
-                  height="240"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/240",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300">
-                  <Link href="/keycaps">Explore Keycaps</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-            <Card className="bg-gray-50 dark:bg-gray-900">
-              <CardHeader>
-                <CardTitle className="font-inter">Switches</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Image
-                  alt="Switches"
-                  className="w-full h-60 object-cover rounded-md"
-                  height="240"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/240",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300">
-                  <Link href="/switches">Explore Switches</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+      </div>
+    </div>
+  );
 }
