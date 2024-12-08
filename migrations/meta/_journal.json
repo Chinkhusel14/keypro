@@ -8,6 +8,20 @@
       "when": 1725948521395,
       "tag": "0000_shocking_exiles",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1733684081343,
+      "tag": "0001_faithful_tomorrow_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1733685655969,
+      "tag": "0002_true_major_mapleleaf",
+      "breakpoints": true
     }
   ]
 }
