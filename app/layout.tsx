@@ -60,7 +60,7 @@ export default function RootLayout({
             </div>
             <div className="flex flex-1 items-center justify-between space-x-5 md:justify-end">
               <div className="w-full flex-1 md:w-auto md:flex-none">
-                <button className="inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted sm:pr-12 md:w-40 lg:w-64">
+                <button className="inline-flex items-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted sm:pr-12 md:w-40 lg:w-64">
                   <span className="hidden lg:inline-flex">Хайх...</span>
                   <kbd className="absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 px-1.5 font-medium opacity-100 sm:flex">
                     <Search />
@@ -68,11 +68,11 @@ export default function RootLayout({
                 </button>
               </div>
               <nav className="flex items-center justify-between space-x-4 md:justify-end">
-                <a className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
+                <a className="inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
                   <ShoppingCart />
                   <span className="sr-only">Shopping Cart</span>
                 </a>
-                <a className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
+                <a className="inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
                   <User />
                   <span className="sr-only">User Account</span>
                 </a>
