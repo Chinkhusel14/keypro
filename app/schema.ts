@@ -11,3 +11,15 @@ export const keyboards = pgTable('keyboards', {
   stock: integer('stock').notNull(),
 });
 
+export const keycaps = pgTable('keycaps', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  images: json('images').$type<string[]>().notNull(),
+  material: varchar('material', { length: 50 }).notNull(),
+  profile: varchar('profile', { length: 50 }).notNull(),
+  price: integer('price').notNull(),
+  description: varchar('description', { length: 1000 }),
+  compatibility: json('compatibility').$type<string[]>().notNull(),
+  stock: integer('stock').notNull(),
+});
+

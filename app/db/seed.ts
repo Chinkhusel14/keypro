@@ -1,120 +1,71 @@
 import { db } from '@/app/db/db';
-import { keyboards } from '@/app/schema';
+import { keyboards , keycaps} from '@/app/schema';
 
 async function seed() {
   try {
-    await db.insert(keyboards).values([
+    await db.insert(keycaps).values([
       {
-        name: "AJAZZ AK650 PRO WHITE",
-        images: [
-          "/assets/keyboard-1.webp",
-          "/assets/keyboard-1.webp",
-          "/assets/keyboard-1.webp",
-          "/assets/keyboard-1.webp",
-          "/assets/landing_page_keyboard.webp",
-        ],
-        type: "65% Gasket Mechanical Keyboard",
-        features: [
-          "3 Modes Wireless Gaming Keyboard",
-          '0.85" Display Screen & Knob',
-          "5000 mAh Battery",
-          "Hot Swappable Keyboard",
-          "Flex-Cut Plate & PCB",
-        ],
-        price: 300000,
-        colors: [
-          { name: "Purple", value: "#9333EA" },
-          { name: "White", value: "#F9FAFB" },
-          { name: "Pink", value: "#EC4899" },
-        ],
-        stock: 48,
+        name: "GMK Olivia",
+        images: ["/keycap-1.jpg"],
+        material: "ABS",
+        profile: "Cherry",
+        price: 50000,
+        description: "A keycap set inspired by the warm hues of olive branches.",
+        compatibility: ["MX", "Cherry", "Gateron"],
+        stock: 100
       },
       {
-        name: "Ducky One 3",
-        images: ["/keyboard-2.jpg"],
-        type: "TKL Mechanical Keyboard",
-        features: [
-          "Cherry MX Brown switches",
-          "PBT Double-shot seamless keycaps",
-          "USB Type-C",
-          "N-key rollover",
-        ],
-        price: 350000,
-        colors: [
-          { name: "Black", value: "#000000" },
-          { name: "White", value: "#FFFFFF" },
-        ],
-        stock: 30,
+        name: "EnjoyPBT Black on White",
+        images: ["/keycap-2.jpg"],
+        material: "PBT",
+        profile: "Cherry",
+        price: 45000,
+        description: "Classic black on white PBT keycaps with excellent durability.",
+        compatibility: ["MX", "Cherry", "Gateron", "Kailh"],
+        stock: 150
       },
       {
-        name: "Varmilo VA87M",
-        images: ["/keyboard-3.jpg"],
-        type: "TKL Mechanical Keyboard",
-        features: [
-          "EC Switch V2",
-          "PBT Dye-sub keycaps",
-          "USB Type-C",
-          "Customizable LED backlighting",
-        ],
-        price: 320000,
-        colors: [
-          { name: "Charcoal", value: "#36454F" },
-          { name: "Sakura", value: "#FFB7C5" },
-        ],
-        stock: 25,
+        name: "SA Vilebloom",
+        images: ["/keycap-3.jpg"],
+        material: "ABS",
+        profile: "SA",
+        price: 55000,
+        description: "Vibrant and colorful SA profile keycaps inspired by nature.",
+        compatibility: ["MX", "Cherry"],
+        stock: 80
       },
       {
-        name: "AJAZZ AK620",
-        images: ["/keyboard-4.jpg"],
-        type: "75% Mechanical Keyboard",
-        features: [
-          "Ajazz CS Crystal switches",
-          "Hot-swappable PCB",
-          "RGB backlighting",
-          "Aluminum frame",
-        ],
-        price: 280000,
-        colors: [
-          { name: "Space Gray", value: "#8E8E93" },
-          { name: "Silver", value: "#C0C0C0" },
-        ],
-        stock: 40,
+        name: "MT3 /dev/tty",
+        images: ["/keycap-4.jpg"],
+        material: "PBT",
+        profile: "MT3",
+        price: 48000,
+        description: "Retro-inspired keycaps with a unique sculpted profile.",
+        compatibility: ["MX", "Cherry", "Gateron"],
+        stock: 120
       },
       {
-        name: "Ducky Mecha Mini",
-        images: ["/keyboard-5.jpg"],
-        type: "60% Mechanical Keyboard",
-        features: [
-          "Cherry MX Red switches",
-          "Aluminum case",
-          "PBT Double-shot keycaps",
-          "RGB backlighting",
-        ],
-        price: 330000,
-        colors: [
-          { name: "Black", value: "#000000" },
-          { name: "White", value: "#FFFFFF" },
-        ],
-        stock: 20,
+        name: "KAT Milkshake",
+        images: ["/keycap-5.jpg"],
+        material: "PBT",
+        profile: "KAT",
+        price: 52000,
+        description: "Playful and minimalist keycap set with various kitting options.",
+        compatibility: ["MX", "Cherry", "Kailh"],
+        stock: 90
       },
       {
-        name: "Varmilo VEA65",
-        images: ["/keyboard-6.jpg"],
-        type: "65% Mechanical Keyboard",
-        features: [
-          "EC Switch V2 Sakura",
-          "PBT Dye-sub keycaps",
-          "USB Type-C",
-          "Customizable LED backlighting",
-        ],
-        price: 340000,
-        colors: [
-          { name: "Sakura Pink", value: "#FFB7C5" },
-          { name: "Ocean Blue", value: "#0077BE" },
-        ],
-        stock: 35,
+        name: "DSA Magic Girl",
+        images: ["/keycap-6.jpg"],
+        material: "PBT",
+        profile: "DSA",
+        price: 47000,
+        description: "Cute and magical themed keycap set with uniform profile.",
+        compatibility: ["MX", "Cherry", "Gateron", "Kailh"],
+        stock: 110
       },
     ]);
+
     console.log('Seed data inserted successfully');
   } catch (error) {
     console.error('Error seeding data:', error);
