@@ -45,18 +45,18 @@ export default function Home() {
           <Card className="rounded-3xl">
             <CardContent className="p-4">
               <Image
-                src="/switches.jpg"
+                src="/assets/landing_page_keyswitch.webp"
                 alt="Keyboard Switches"
                 width={400}
                 height={300}
-                className="w-full h-auto object-cover rounded-lg"
+                className="w-full h-auto object-cover rounded-3xl"
               />
             </CardContent>
           </Card>
           <Card className="rounded-3xl">
             <CardContent className="p-4">
               <Image
-                src="/keycaps.jpg"
+                src="/assets/landing_page_keycap.webp"
                 alt="Keycaps"
                 width={400}
                 height={300}
