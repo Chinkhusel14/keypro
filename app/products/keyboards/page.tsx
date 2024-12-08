@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const products = [
   {
@@ -57,38 +58,49 @@ export default function KeyboardsPage() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {products.map((product) => (
-        <Card key={product.id} className="overflow-hidden rounded-[24px]">
-          <CardContent className="p-4">
-            <div className="relative aspect-[4/3]">
-              <h3 className="font-bold text-lg text-primary ">
-                {product.name}
-              </h3>
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover rounded-[20px] mt-6"
-              />
-            </div>
-            <div className="mt-6">
-              <p className="text-sm text-secondary">
-                Switch Type: {product.switchType}
+        <Link
+          key={product.id}
+          href={`/products/keyboards/${product.id}`}
+          className="transition-transform hover:scale-[1.02] relative"
+          style={{
+            cursor: `url('/assets/cursor-icon.svg') 16 16, pointer`,
+          }}
+        >
+          <Card key={product.id} className="overflow-hidden rounded-[24px]">
+            <CardContent className="p-4">
+              <div className="relative aspect-[4/3]">
+                <h3 className="font-bold text-lg text-primary ">
+                  {product.name}
+                </h3>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover rounded-[20px] mt-6"
+                />
+              </div>
+              <div className="mt-6">
+                <p className="text-sm text-secondary">
+                  Switch Type: {product.switchType}
+                </p>
+                <p className="text-sm text-secondary">
+                  Layout: {product.layout}
+                </p>
+              </div>
+            </CardContent>
+            <CardFooter className="flex justify-between items-center px-4">
+              <p className="font-righteous text-secondary text-xl">
+                {product.price}
               </p>
-              <p className="text-sm text-secondary">Layout: {product.layout}</p>
-            </div>
-          </CardContent>
-          <CardFooter className="flex justify-between items-center px-4">
-            <p className="font-righteous text-secondary text-xl">
-              {product.price}
-            </p>
-            <Button
-              variant="outline"
-              className="font-bold text-secondary text-xl hover:text-primary"
-            >
-              Сагслах
-            </Button>
-          </CardFooter>
-        </Card>
+              <Button
+                variant="outline"
+                className="font-bold text-secondary text-xl hover:text-primary"
+              >
+                Сагслах
+              </Button>
+            </CardFooter>
+          </Card>
+        </Link>
       ))}
     </div>
   );
