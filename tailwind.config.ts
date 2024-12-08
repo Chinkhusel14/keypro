@@ -1,5 +1,8 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+import animatePlugin from 'tailwindcss-animate';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
 	darkMode: ["class"],
 	content: [
 		'./pages/**/*.{ts,tsx}',
@@ -16,30 +19,27 @@ module.exports = {
 			},
 		},
 		extend: {
-			fontFamily: {
-				righteous: ['var(--font-righteous)'],
-			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
+				background: "#F9FAFB",
+				foreground: "#1F2937",
 				primary: {
-					DEFAULT: "hsl(var(--primary))",
-					foreground: "hsl(var(--primary-foreground))",
+					DEFAULT: "#1F2937",
+					foreground: "#F9FAFB",
 				},
 				secondary: {
-					DEFAULT: "hsl(var(--secondary))",
-					foreground: "hsl(var(--secondary-foreground))",
+					DEFAULT: "#4B5563",
+					foreground: "#F9FAFB",
 				},
 				destructive: {
 					DEFAULT: "hsl(var(--destructive))",
 					foreground: "hsl(var(--destructive-foreground))",
 				},
 				muted: {
-					DEFAULT: "hsl(var(--muted))",
-					foreground: "hsl(var(--muted-foreground))",
+					DEFAULT: "#4B5563",
+					foreground: "#F9FAFB",
 				},
 				accent: {
 					DEFAULT: "hsl(var(--accent))",
@@ -59,6 +59,10 @@ module.exports = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
+			fontFamily: {
+				sans: ["var(--font-pt-sans-caption)", ...defaultTheme.fontFamily.sans],
+				righteous: ["var(--font-righteous)", ...defaultTheme.fontFamily.sans],
+			},
 			keyframes: {
 				"accordion-down": {
 					from: { height: 0 },
@@ -75,5 +79,7 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
-}
+	plugins: [animatePlugin],
+};
+
+export default config;
