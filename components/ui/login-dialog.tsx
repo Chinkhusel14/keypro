@@ -18,8 +18,6 @@ import {
   signInWithPhoneNumber,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import { useRouter } from "next/router";
-import { useAuth } from "./AuthProvider";
 
 export function LoginDialog() {
   const [open, setOpen] = useState(false);
@@ -74,7 +72,6 @@ export function LoginDialog() {
         await confirmationResult?.confirm(otp);
         console.log("CONFIRMED");
         console.log(confirmationResult);
-        //   router.replace("/");
       } catch (error) {
         console.log(error);
 
@@ -128,10 +125,6 @@ export function LoginDialog() {
         }
       }
     });
-  };
-
-  const handleLogin = async () => {
-    //
   };
 
   return (
