@@ -180,27 +180,30 @@ export function LoginDialog() {
             </form>
           )}
         </div>
-        <Button
-          disabled={!phoneNumber || isPending || resendCountdown > 0}
-          className="w-full"
-          type="submit"
-          onClick={() => requestOtp()}
-        >
-          {resendCountdown > 0
-            ? `Дахин илгээх боломжтой: ${resendCountdown} секунд`
-            : isPending
-            ? "Sending OTP"
-            : "Send OTP"}
-        </Button>
+        {!confirmationResult && (
+          <Button
+            disabled={!phoneNumber || isPending || resendCountdown > 0}
+            className="w-full"
+            type="submit"
+            onClick={() => requestOtp()}
+          >
+            {resendCountdown > 0
+              ? `Дахин илгээх боломжтой: ${resendCountdown} секунд`
+              : isPending
+              ? "Sending OTP"
+              : "Send OTP"}
+          </Button>
+        )}
+        {confirmationResult && (
+          <Button className="w-full" type="submit" onClick={() => verifyOtp()}>
+            Баталгаажуулах
+          </Button>
+        )}
         {error && (
-          <p className="mt-2 text-sm text-center text-muted-foreground">
-            {error}
-          </p>
+          <p className="mt-2 text-sm text-center text-secondary">{error}</p>
         )}
         {success && (
-          <p className="mt-2 text-sm text-center text-muted-foreground">
-            {success}
-          </p>
+          <p className="mt-2 text-sm text-center text-secondary">{success}</p>
         )}
         {isPending && <LoaderIcon className="text-center" />}
       </DialogContent>
