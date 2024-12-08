@@ -120,10 +120,6 @@ export function LoginDialog() {
     });
   };
 
-  const handleLogin = async () => {
-    //
-  };
-
   return (
     <Dialog
       open={open}
