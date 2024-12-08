@@ -19,7 +19,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(user || null);
     });
     return () => unsubscribe();
-  }, [auth]);
+  }, []);
   return (
     <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
   );

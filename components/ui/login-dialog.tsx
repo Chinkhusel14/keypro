@@ -18,8 +18,6 @@ import {
   signInWithPhoneNumber,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import { useRouter } from "next/router";
-import { useAuth } from "./AuthProvider";
 
 export function LoginDialog() {
   const [open, setOpen] = useState(false);
@@ -74,7 +72,6 @@ export function LoginDialog() {
         await confirmationResult?.confirm(otp);
         console.log("CONFIRMED");
         console.log(confirmationResult);
-        //   router.replace("/");
       } catch (error) {
         console.log(error);
 
@@ -115,17 +112,10 @@ export function LoginDialog() {
         setConfirmationResult(confirmationResult);
         console.log(confirmationResult);
         setSuccess("OTP sent successfully.");
-      } catch (err: any) {
+      } catch (err) {
         console.log(err);
         setResendCountdown(0);
-
-        if (err.code === "auth/invalid-phone-number") {
-          setError("Invalid phone number. Please check the number.");
-        } else if (err.code === "auth/too-many-requests") {
-          setError("Too many requests. Please try again later.");
-        } else {
-          setError("Failed to send OTP. Please try again.");
-        }
+        setError("OTP failed");
       }
     });
   };

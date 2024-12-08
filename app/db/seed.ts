@@ -1,5 +1,5 @@
 import { db } from '@/app/db/db';
-import { keyboards , keycaps} from '@/app/schema';
+import { keycaps} from '@/app/schema';
 
 async function seed() {
   try {
