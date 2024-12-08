@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { PT_Sans_Caption, Righteous } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "@/app/globals.css";
-import { Search, ShoppingCart, User } from "lucide-react";
+import { Search, ShoppingCart } from "lucide-react";
+import { LoginDialog } from "@/components/ui/login-dialog";
 
 const ptSansCaption = PT_Sans_Caption({
   weight: ["400", "700"],
@@ -39,7 +40,7 @@ export default function RootLayout({
           <div className="container flex h-[72px] items-center">
             <div className="mr-4 hidden md:flex">
               <a className="mr-6 flex items-center space-x-2" href="/">
-                <span className="text-4xl font-righteous text-foreground sm:inline-block">
+                <span className="text-4xl font-righteous text-primary sm:inline-block">
                   Key board.mn
                 </span>
               </a>
@@ -72,10 +73,7 @@ export default function RootLayout({
                   <ShoppingCart />
                   <span className="sr-only">Shopping Cart</span>
                 </a>
-                <a className="inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
-                  <User />
-                  <span className="sr-only">User Account</span>
-                </a>
+                <LoginDialog />
               </nav>
             </div>
           </div>
